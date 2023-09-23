@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Sora', sans-serif;
+}
+/* Improved checkbox styling that works * for single line and multiple lines * of text that wraps */
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 1.415em;
+  cursor: pointer;
+}
+.checkbox__label {
+  line-height: 1.414;
+}
+.checkbox input {
+  display: none;
+}
+.checkbox__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border: 1px solid #5538c8;
+  border-radius: 4px;
+  transition: 125ms ease-out;
+}
+.checkbox__indicator:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 7px;
+  height: 13px;
+  transform: scaleX(-1) rotate(135deg);
+  transform-origin: left top;
+  border-right: 3px solid white;
+  border-top: 3px solid white;
+  display: none;
+}
+.checkbox input:checked ~ .checkbox__indicator {
+  background: white;
+}
+.checkbox input:checked ~ .checkbox__indicator:after {
+  animation: check 125ms;
+  border-top: 3px solid #5538c8;
+  border-right: 3px solid #5538c8;
+  display: block;
+}
+/* Pagination Styles */
+.page-link {
+
+}
